@@ -25,6 +25,6 @@ while (true) {
     // Log streamed response chunks as they arrive
     for await (const chunk of result.stream) {
         const chunkText = chunk.text()
-        console.log(chunkText)
+        process.stdout.write(chunkText)
     }
 }
