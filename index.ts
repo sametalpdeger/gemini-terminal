@@ -1,18 +1,11 @@
-import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai'
+import { GoogleGenerativeAI } from '@google/generative-ai'
+import { configuration } from './configuration'
 
 const apiKey = process.env.GEMINI_API_KEY
 if (!apiKey) throw new Error('GEMINI_API_KEY is not set')
 
 const genAI = new GoogleGenerativeAI(apiKey)
-const model = genAI.getGenerativeModel({
-    model: 'gemini-2.0-flash',
-    safetySettings: [
-        {
-            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-            threshold: HarmBlockThreshold.BLOCK_NONE
-        }
-    ]
-})
+const model = genAI.getGenerativeModel(configuration.modelParams, configuration.requestOptions)
 
 while (true) {
     console.log('\n -------------------- \n')
