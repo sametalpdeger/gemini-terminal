@@ -1,0 +1,42 @@
+[
+  [
+    {
+      "action": "generate-problem-description",
+      "problem": "I'm having trouble with my computer. It's not working properly and I need help."
+    },
+    {
+      "action": "generate-problem-description",
+      "respond": "User is having trouble with their computer. It's not working properly and they need help."
+    }
+  ],
+
+  [
+    {
+      "action": "respond-with-solution",
+      "problem": "I'm having trouble with my computer. It's not working properly and I need help.",
+      "solutions": [
+        {
+          "percentage": 40,
+          "solution": "You can try restarting your computer."
+        },
+        {
+          "percentage": 60,
+          "solution": "You can try reinstalling your operating system."
+        }
+      ]
+    },
+
+    {
+      "action": "respond-with-solution",
+      "problem": "I'm having trouble with my computer. It's not working properly and I need help.",
+      "solutions": null
+    }
+  ],
+
+  {
+    "action": "analyze-problem-solution",
+    "problem": "I'm having trouble with my computer. It's not working properly and I need help.",
+    "solution": "Broke the computer again.",
+    "shouldBeTrained": false
+  }
+]

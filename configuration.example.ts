@@ -8,7 +8,7 @@ export const configuration: Configuration = {
                 category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
                 threshold: HarmBlockThreshold.BLOCK_NONE
             }
-        ]
+        ],
     },
 
     requestOptions: undefined
