@@ -23,7 +23,6 @@ while (true) {
 
 
     const promptText = `You are a helpful terminal based assistant chatting with user based on the previous chat history and context. Don't use markdown syntax when answering. \nContext: ${configuration.context} \nChat history:\n${chatHistory.map(({ role, content }) => `${role}: ${content}`).join('\n')}\n\nCurrent prompt: ${promptInput}`
-    console.log(promptText)
     const result = await model.generateContentStream(promptText)
 
     chatHistory.push({ role: 'user', content: promptInput })
